@@ -1,0 +1,7 @@
+## Ignore temporary Visual Studio files
+*.suo
+.vs/
+
+## Ignore build created folders
+[Bb]in/
+[Oo]bj/
