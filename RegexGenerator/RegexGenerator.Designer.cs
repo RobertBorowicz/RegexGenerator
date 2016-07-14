@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ComboBox CategoriesDropdown;
             this.RegexTextbox = new System.Windows.Forms.TextBox();
             this.RegexLabel = new System.Windows.Forms.Label();
             this.AlphaCharButton = new System.Windows.Forms.Button();
@@ -45,8 +46,21 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            CategoriesDropdown = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // CategoriesDropdown
+            // 
+            CategoriesDropdown.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            CategoriesDropdown.Items.AddRange(new object[] {
+            "Alphanumeric",
+            "Special Characters",
+            "Unicode"});
+            CategoriesDropdown.Location = new System.Drawing.Point(12, 68);
+            CategoriesDropdown.Name = "CategoriesDropdown";
+            CategoriesDropdown.Size = new System.Drawing.Size(121, 21);
+            CategoriesDropdown.TabIndex = 12;
             // 
             // RegexTextbox
             // 
@@ -82,6 +96,7 @@
             this.DigitButton.TabIndex = 3;
             this.DigitButton.Text = "Digit (0-9)";
             this.DigitButton.UseVisualStyleBackColor = true;
+            this.DigitButton.Click += new System.EventHandler(this.DigitButton_Click);
             // 
             // CharRangeButton
             // 
@@ -147,6 +162,7 @@
             this.TestButton.TabIndex = 10;
             this.TestButton.Text = "Test";
             this.TestButton.UseVisualStyleBackColor = true;
+            this.TestButton.Click += new System.EventHandler(this.TestButton_Click);
             // 
             // menuStrip1
             // 
@@ -185,13 +201,13 @@
             // undoToolStripMenuItem
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.undoToolStripMenuItem.Text = "Undo";
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.redoToolStripMenuItem.Text = "Redo";
             // 
             // RegexGenerator
@@ -199,6 +215,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 325);
+            this.Controls.Add(CategoriesDropdown);
             this.Controls.Add(this.TestButton);
             this.Controls.Add(this.VerbatimCheckbox);
             this.Controls.Add(this.CopyTextButton);
@@ -211,9 +228,10 @@
             this.Controls.Add(this.RegexLabel);
             this.Controls.Add(this.RegexTextbox);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "RegexGenerator";
             this.Text = "Basic Regex Generator";
-            this.Load += new System.EventHandler(this.RegexGenerator_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

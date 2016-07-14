@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicPopup.cs">
+    <Compile Include="Quantifier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BasicPopup.Designer.cs">
-      <DependentUpon>BasicPopup.cs</DependentUpon>
+    <Compile Include="Quantifier.Designer.cs">
+      <DependentUpon>Quantifier.cs</DependentUpon>
     </Compile>
     <Compile Include="RegexGenerator.cs">
       <SubType>Form</SubType>
@@ -60,8 +60,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="BasicPopup.resx">
-      <DependentUpon>BasicPopup.cs</DependentUpon>
+    <Compile Include="TestWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TestWindow.Designer.cs">
+      <DependentUpon>TestWindow.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Quantifier.resx">
+      <DependentUpon>Quantifier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegexGenerator.resx">
       <DependentUpon>RegexGenerator.cs</DependentUpon>
@@ -75,6 +81,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TestWindow.resx">
+      <DependentUpon>TestWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
