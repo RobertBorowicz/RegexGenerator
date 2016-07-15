@@ -63,5 +63,36 @@ namespace RegexGenerator
                 tWindow.ShowDialog(this);
             }
         }
+
+        private void GroupselectCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Set all visible to false and then set focus to correct group
+            this.AlphaNumGroup.Visible = false;
+            this.SpecialCharGroup.Visible = false;
+            this.UnicodeGroup.Visible = false;
+
+            switch (GroupselectCombo.SelectedIndex)
+            {
+                case 0:
+                    this.AlphaNumGroup.Visible = true;
+                    break;
+                case 1:
+                    this.SpecialCharGroup.Visible = true;
+                    break;
+                case 2:
+                    this.UnicodeGroup.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (OptionsMenu options = new OptionsMenu())
+            {
+                options.ShowDialog(this);
+            }
+        }
     }
 }

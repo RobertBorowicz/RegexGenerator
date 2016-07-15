@@ -61,7 +61,7 @@
             // 
             // RunButton
             // 
-            this.RunButton.Location = new System.Drawing.Point(278, 13);
+            this.RunButton.Location = new System.Drawing.Point(278, 11);
             this.RunButton.Name = "RunButton";
             this.RunButton.Size = new System.Drawing.Size(75, 23);
             this.RunButton.TabIndex = 3;
