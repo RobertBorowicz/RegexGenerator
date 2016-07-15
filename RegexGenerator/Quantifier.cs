@@ -40,17 +40,20 @@ namespace RegexGenerator
             } else if (RangeButton.Checked)
             {
                 string fromVal = FromTextbox.Text;
-                string toVal = ToTextBox.Text;
                 if (!string.IsNullOrEmpty(fromVal))
                 {
-                    regexAddition = _baseString + string.Format("{{{0},{1}}}", fromVal, toVal);
+                    regexAddition = _baseString + string.Format("{{{0},{1}}}", fromVal, ToTextBox.Text);
                 }
             } else if (OneMoreButton.Checked)
             {
                 regexAddition = _baseString + "+";
             }
+            else
+            {
+                regexAddition = _baseString;
+            }
 
-            if (GreedyCheck.Checked) regexAddition += "?";
+            if (!GreedyCheck.Checked) regexAddition += "?";
             parent.UpdateRegexText(regexAddition);
             this.Close();
         }

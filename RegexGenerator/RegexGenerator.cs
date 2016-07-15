@@ -51,9 +51,16 @@ namespace RegexGenerator
 
         private void TestButton_Click(object sender, EventArgs e)
         {
-            using (TestWindow tWindow = new TestWindow(_currentRegex))
+            if (!string.IsNullOrEmpty(_currentRegex))
             {
-                tWindow.ShowDialog(this);
+                using (TestWindow tWindow = new TestWindow(_currentRegex))
+                {
+                    tWindow.ShowDialog(this);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Null Regex String");
             }
         }
 

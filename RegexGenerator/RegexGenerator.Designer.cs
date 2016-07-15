@@ -350,6 +350,7 @@ namespace RegexGenerator
             this.TabButton.TabIndex = 1;
             this.TabButton.Text = "Tab";
             this.TabButton.UseVisualStyleBackColor = true;
+            this.TabButton.Click += (sender, EventArgs) => { OpenQuantifier_Click(sender, EventArgs, @"\t"); };
             // 
             // NewlineButton
             // 
@@ -359,6 +360,7 @@ namespace RegexGenerator
             this.NewlineButton.TabIndex = 2;
             this.NewlineButton.Text = "New Line";
             this.NewlineButton.UseVisualStyleBackColor = true;
+            this.NewlineButton.Click += (sender, EventArgs) => { OpenQuantifier_Click(sender, EventArgs, @"\n"); };
             // 
             // RegexGenerator
             // 
