@@ -46,14 +46,14 @@
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AlphaNumGroup = new System.Windows.Forms.GroupBox();
+            this.CaseLabel = new System.Windows.Forms.Label();
+            this.BothRadioButton = new System.Windows.Forms.RadioButton();
+            this.LowerRadioButton = new System.Windows.Forms.RadioButton();
+            this.UpperRadioButton = new System.Windows.Forms.RadioButton();
             this.SpecialCharGroup = new System.Windows.Forms.GroupBox();
             this.UnicodeGroup = new System.Windows.Forms.GroupBox();
             this.GroupselectCombo = new System.Windows.Forms.ComboBox();
             this.LanguageLabel = new System.Windows.Forms.Label();
-            this.UpperRadioButton = new System.Windows.Forms.RadioButton();
-            this.LowerRadioButton = new System.Windows.Forms.RadioButton();
-            this.BothRadioButton = new System.Windows.Forms.RadioButton();
-            this.CaseLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.AlphaNumGroup.SuspendLayout();
             this.SpecialCharGroup.SuspendLayout();
@@ -183,7 +183,7 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.optionsToolStripMenuItem.Text = "Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.optionsToolStripMenuItem_Click);
             // 
@@ -224,29 +224,68 @@
             this.AlphaNumGroup.TabIndex = 13;
             this.AlphaNumGroup.TabStop = false;
             this.AlphaNumGroup.Text = "Alphanumeric";
-            this.AlphaNumGroup.Visible = false;
+            // 
+            // CaseLabel
+            // 
+            this.CaseLabel.AutoSize = true;
+            this.CaseLabel.Location = new System.Drawing.Point(197, 19);
+            this.CaseLabel.Name = "CaseLabel";
+            this.CaseLabel.Size = new System.Drawing.Size(34, 13);
+            this.CaseLabel.TabIndex = 9;
+            this.CaseLabel.Text = "Case:";
+            // 
+            // BothRadioButton
+            // 
+            this.BothRadioButton.AutoSize = true;
+            this.BothRadioButton.Location = new System.Drawing.Point(197, 84);
+            this.BothRadioButton.Name = "BothRadioButton";
+            this.BothRadioButton.Size = new System.Drawing.Size(47, 17);
+            this.BothRadioButton.TabIndex = 8;
+            this.BothRadioButton.TabStop = true;
+            this.BothRadioButton.Text = "Both";
+            this.BothRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // LowerRadioButton
+            // 
+            this.LowerRadioButton.AutoSize = true;
+            this.LowerRadioButton.Location = new System.Drawing.Point(197, 61);
+            this.LowerRadioButton.Name = "LowerRadioButton";
+            this.LowerRadioButton.Size = new System.Drawing.Size(77, 17);
+            this.LowerRadioButton.TabIndex = 7;
+            this.LowerRadioButton.TabStop = true;
+            this.LowerRadioButton.Text = "Lowercase";
+            this.LowerRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // UpperRadioButton
+            // 
+            this.UpperRadioButton.AutoSize = true;
+            this.UpperRadioButton.Location = new System.Drawing.Point(197, 38);
+            this.UpperRadioButton.Name = "UpperRadioButton";
+            this.UpperRadioButton.Size = new System.Drawing.Size(77, 17);
+            this.UpperRadioButton.TabIndex = 6;
+            this.UpperRadioButton.TabStop = true;
+            this.UpperRadioButton.Text = "Uppercase";
+            this.UpperRadioButton.UseVisualStyleBackColor = true;
             // 
             // SpecialCharGroup
             // 
             this.SpecialCharGroup.Controls.Add(this.WhiteSpaceButton);
             this.SpecialCharGroup.Controls.Add(this.AnyCharButton);
-            this.SpecialCharGroup.Location = new System.Drawing.Point(85, 290);
+            this.SpecialCharGroup.Location = new System.Drawing.Point(150, 84);
             this.SpecialCharGroup.Name = "SpecialCharGroup";
             this.SpecialCharGroup.Size = new System.Drawing.Size(200, 100);
             this.SpecialCharGroup.TabIndex = 14;
             this.SpecialCharGroup.TabStop = false;
             this.SpecialCharGroup.Text = "Special Characters";
-            this.SpecialCharGroup.Visible = false;
             // 
             // UnicodeGroup
             // 
-            this.UnicodeGroup.Location = new System.Drawing.Point(344, 163);
+            this.UnicodeGroup.Location = new System.Drawing.Point(3, 190);
             this.UnicodeGroup.Name = "UnicodeGroup";
             this.UnicodeGroup.Size = new System.Drawing.Size(200, 100);
             this.UnicodeGroup.TabIndex = 15;
             this.UnicodeGroup.TabStop = false;
             this.UnicodeGroup.Text = "Unicode";
-            this.UnicodeGroup.Visible = false;
             // 
             // GroupselectCombo
             // 
@@ -273,48 +312,6 @@
             this.LanguageLabel.TabIndex = 17;
             this.LanguageLabel.Text = "C#";
             // 
-            // UpperRadioButton
-            // 
-            this.UpperRadioButton.AutoSize = true;
-            this.UpperRadioButton.Location = new System.Drawing.Point(197, 38);
-            this.UpperRadioButton.Name = "UpperRadioButton";
-            this.UpperRadioButton.Size = new System.Drawing.Size(77, 17);
-            this.UpperRadioButton.TabIndex = 6;
-            this.UpperRadioButton.TabStop = true;
-            this.UpperRadioButton.Text = "Uppercase";
-            this.UpperRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // LowerRadioButton
-            // 
-            this.LowerRadioButton.AutoSize = true;
-            this.LowerRadioButton.Location = new System.Drawing.Point(197, 61);
-            this.LowerRadioButton.Name = "LowerRadioButton";
-            this.LowerRadioButton.Size = new System.Drawing.Size(77, 17);
-            this.LowerRadioButton.TabIndex = 7;
-            this.LowerRadioButton.TabStop = true;
-            this.LowerRadioButton.Text = "Lowercase";
-            this.LowerRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // BothRadioButton
-            // 
-            this.BothRadioButton.AutoSize = true;
-            this.BothRadioButton.Location = new System.Drawing.Point(197, 84);
-            this.BothRadioButton.Name = "BothRadioButton";
-            this.BothRadioButton.Size = new System.Drawing.Size(47, 17);
-            this.BothRadioButton.TabIndex = 8;
-            this.BothRadioButton.TabStop = true;
-            this.BothRadioButton.Text = "Both";
-            this.BothRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // CaseLabel
-            // 
-            this.CaseLabel.AutoSize = true;
-            this.CaseLabel.Location = new System.Drawing.Point(197, 19);
-            this.CaseLabel.Name = "CaseLabel";
-            this.CaseLabel.Size = new System.Drawing.Size(34, 13);
-            this.CaseLabel.TabIndex = 9;
-            this.CaseLabel.Text = "Case:";
-            // 
             // RegexGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,15 +319,15 @@
             this.ClientSize = new System.Drawing.Size(350, 325);
             this.Controls.Add(this.LanguageLabel);
             this.Controls.Add(this.GroupselectCombo);
-            this.Controls.Add(this.UnicodeGroup);
-            this.Controls.Add(this.AlphaNumGroup);
             this.Controls.Add(this.TestButton);
             this.Controls.Add(this.VerbatimCheckbox);
             this.Controls.Add(this.CopyTextButton);
             this.Controls.Add(this.RegexLabel);
             this.Controls.Add(this.RegexTextbox);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.SpecialCharGroup);
+            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.UnicodeGroup);
+            this.Controls.Add(this.AlphaNumGroup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "RegexGenerator";

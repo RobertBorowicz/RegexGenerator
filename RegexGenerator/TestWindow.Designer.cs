@@ -41,6 +41,7 @@
             this.RegexTextbox.Name = "RegexTextbox";
             this.RegexTextbox.Size = new System.Drawing.Size(259, 20);
             this.RegexTextbox.TabIndex = 0;
+            this.RegexTextbox.TextChanged += new System.EventHandler(this.RegexTextbox_TextChanged);
             // 
             // InputTextbox
             // 
@@ -67,6 +68,7 @@
             this.RunButton.TabIndex = 3;
             this.RunButton.Text = "Run Test";
             this.RunButton.UseVisualStyleBackColor = true;
+            this.RunButton.Click += new System.EventHandler(this.RunButton_Click);
             // 
             // CancelButton
             // 
@@ -92,6 +94,7 @@
             this.MaximizeBox = false;
             this.Name = "TestWindow";
             this.Text = "TestWindow";
+            this.Load += new System.EventHandler(this.TestWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

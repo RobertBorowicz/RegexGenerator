@@ -30,7 +30,7 @@ namespace RegexGenerator
         public void UpdateRegexText(string newText)
         {
             //Kind of a bad way to do this, but it's very simple text, so shouldn't cause issues
-            RegexTextbox.Text = ModifyQuotes() + newText + "\"";
+            RegexTextbox.Text += newText;
         }
 
         private string ModifyQuotes()
@@ -58,7 +58,7 @@ namespace RegexGenerator
 
         private void TestButton_Click(object sender, EventArgs e)
         {
-            using (TestWindow tWindow = new TestWindow())
+            using (TestWindow tWindow = new TestWindow(this.RegexTextbox.Text))
             {
                 tWindow.ShowDialog(this);
             }
@@ -75,12 +75,15 @@ namespace RegexGenerator
             {
                 case 0:
                     this.AlphaNumGroup.Visible = true;
+                    //this.AlphaNumGroup.BringToFront();
                     break;
                 case 1:
                     this.SpecialCharGroup.Visible = true;
+                    //this.SpecialCharGroup.BringToFront();
                     break;
                 case 2:
                     this.UnicodeGroup.Visible = true;
+                    //this.UnicodeGroup.BringToFront();
                     break;
                 default:
                     break;
