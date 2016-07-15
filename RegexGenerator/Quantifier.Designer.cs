@@ -41,19 +41,20 @@
             this.ToLabel = new System.Windows.Forms.Label();
             this.ToTextBox = new System.Windows.Forms.TextBox();
             this.QuantifyGroupBox = new System.Windows.Forms.GroupBox();
+            this.GreedyCheck = new System.Windows.Forms.CheckBox();
             this.QuantifyGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ZeroOneButton
             // 
             this.ZeroOneButton.AutoSize = true;
+            this.ZeroOneButton.Checked = true;
             this.ZeroOneButton.Location = new System.Drawing.Point(10, 20);
             this.ZeroOneButton.Name = "ZeroOneButton";
             this.ZeroOneButton.Size = new System.Drawing.Size(82, 17);
             this.ZeroOneButton.TabIndex = 1;
             this.ZeroOneButton.TabStop = true;
             this.ZeroOneButton.Text = "Zero or One";
-            this.ZeroOneButton.Checked = true;
             this.ZeroOneButton.UseVisualStyleBackColor = true;
             // 
             // OneMoreButton
@@ -174,6 +175,7 @@
             // 
             // QuantifyGroupBox
             // 
+            this.QuantifyGroupBox.Controls.Add(this.GreedyCheck);
             this.QuantifyGroupBox.Controls.Add(this.ZeroOneButton);
             this.QuantifyGroupBox.Controls.Add(this.ToLabel);
             this.QuantifyGroupBox.Controls.Add(this.ToTextBox);
@@ -190,6 +192,16 @@
             this.QuantifyGroupBox.TabIndex = 13;
             this.QuantifyGroupBox.TabStop = false;
             this.QuantifyGroupBox.Text = "Quantifiers";
+            // 
+            // GreedyCheck
+            // 
+            this.GreedyCheck.AutoSize = true;
+            this.GreedyCheck.Location = new System.Drawing.Point(201, 19);
+            this.GreedyCheck.Name = "GreedyCheck";
+            this.GreedyCheck.Size = new System.Drawing.Size(60, 17);
+            this.GreedyCheck.TabIndex = 13;
+            this.GreedyCheck.Text = "Greedy";
+            this.GreedyCheck.UseVisualStyleBackColor = true;
             // 
             // Quantifier
             // 
@@ -223,5 +235,6 @@
         private System.Windows.Forms.Label ToLabel;
         private System.Windows.Forms.TextBox ToTextBox;
         private System.Windows.Forms.GroupBox QuantifyGroupBox;
+        private System.Windows.Forms.CheckBox GreedyCheck;
     }
 }

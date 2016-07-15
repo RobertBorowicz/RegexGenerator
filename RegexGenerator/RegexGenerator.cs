@@ -5,18 +5,11 @@ namespace RegexGenerator
 {
     public partial class RegexGenerator : Form
     {
+        private string _currentRegex;
+
         public RegexGenerator()
         {
             InitializeComponent();
-        }
-
-        private void AlphaCharButton_Click(object sender, EventArgs e)
-        {
-            //UpdateRegexText("[A-Za-z]");
-            using (Quantifier popup = new Quantifier("[A-Za-z]"))
-            {
-                popup.ShowDialog(this);
-            }
         }
 
         private void CopyTextButton_Click(object sender, EventArgs e)
@@ -48,9 +41,9 @@ namespace RegexGenerator
             }
         }
 
-        private void DigitButton_Click(object sender, EventArgs e)
+        private void OpenQuantifier_Click(object sender, EventArgs e, string buttonText)
         {
-            using (Quantifier popup = new Quantifier("[0-9]"))
+            using (Quantifier popup = new Quantifier(buttonText))
             {
                 popup.ShowDialog(this);
             }
@@ -58,7 +51,7 @@ namespace RegexGenerator
 
         private void TestButton_Click(object sender, EventArgs e)
         {
-            using (TestWindow tWindow = new TestWindow(this.RegexTextbox.Text))
+            using (TestWindow tWindow = new TestWindow(_currentRegex))
             {
                 tWindow.ShowDialog(this);
             }
@@ -96,6 +89,11 @@ namespace RegexGenerator
             {
                 options.ShowDialog(this);
             }
+        }
+
+        private void RegexTextbox_TextChanged(object sender, EventArgs e)
+        {
+            _currentRegex = RegexTextbox.Text;
         }
     }
 }

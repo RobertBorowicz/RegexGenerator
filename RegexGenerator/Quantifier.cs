@@ -32,14 +32,25 @@ namespace RegexGenerator
                 regexAddition = _baseString + "*";
             } else if (ExactlyButton.Checked)
             {
-
+                string val = ExactlyTextBox.Text;
+                if (!string.IsNullOrEmpty(val))
+                {
+                    regexAddition = _baseString + string.Format("{{{0}}}", val);
+                }
             } else if (RangeButton.Checked)
             {
-
+                string fromVal = FromTextbox.Text;
+                string toVal = ToTextBox.Text;
+                if (!string.IsNullOrEmpty(fromVal))
+                {
+                    regexAddition = _baseString + string.Format("{{{0},{1}}}", fromVal, toVal);
+                }
             } else if (OneMoreButton.Checked)
             {
                 regexAddition = _baseString + "+";
             }
+
+            if (GreedyCheck.Checked) regexAddition += "?";
             parent.UpdateRegexText(regexAddition);
             this.Close();
         }
