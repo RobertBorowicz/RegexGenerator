@@ -8,33 +8,6 @@ namespace RegexGenerator.MenuSettings
 {
     static class Global
     {
-        private static string _language = "C#";
-        private static Dictionary<string, string> _languageDictionary;
-
-        public static string Language
-        {
-            get { return _language; }
-            set
-            {
-                if (value == null) throw new ArgumentNullException(nameof(value));
-                _language = value;
-
-                if (value == "C#")
-                {
-                    LanguageDictionary = CSharpDictionary;
-                }
-                else if (value == "Python")
-                {
-                    LanguageDictionary = PythonDictionary;
-                }
-            }
-        }
-
-        public static Dictionary<string, string> LanguageDictionary
-        {
-            get { return _languageDictionary; }
-            private set { _languageDictionary = value; }
-        }
 
         private static readonly Dictionary<string, string> PythonDictionary = new Dictionary<string, string>
         {
@@ -113,5 +86,33 @@ namespace RegexGenerator.MenuSettings
             { "anyCharacter", @"." },
             { "fullStop", @"\." },
         };
+
+        private static string _language = "C#";
+        private static Dictionary<string, string> _languageDictionary = CSharpDictionary;
+
+        public static string Language
+        {
+            get { return _language; }
+            set
+            {
+                if (value == null) throw new ArgumentNullException(nameof(value));
+                _language = value;
+
+                if (value == "C#")
+                {
+                    LanguageDictionary = CSharpDictionary;
+                }
+                else if (value == "Python")
+                {
+                    LanguageDictionary = PythonDictionary;
+                }
+            }
+        }
+
+        public static Dictionary<string, string> LanguageDictionary
+        {
+            get { return _languageDictionary; }
+            private set { _languageDictionary = value; }
+        }
     }
 }

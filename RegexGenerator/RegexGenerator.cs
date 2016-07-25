@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using RegexGenerator.MenuSettings;
 
 namespace RegexGenerator
 {
@@ -16,13 +17,13 @@ namespace RegexGenerator
         private void InitializeClicks()
         {
             //Add clicking functions
-            this.NewlineButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"\n"); };
-            this.SpaceButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"\s"); };
-            this.TabButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"\t"); };
-            this.AlphaCharButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"[A-Za-z]"); };
-            this.DigitButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"\d"); };
-            this.CarriageButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"\r"); };
-            this.VertTabButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"\v"); };
+            this.NewlineButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, Global.LanguageDictionary["newLine"]); };
+            this.SpaceButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, Global.LanguageDictionary["whiteSpace"]); };
+            this.TabButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, Global.LanguageDictionary["tab"]); };
+            this.AlphaCharButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, Global.LanguageDictionary["fullAlphabet"]); };
+            this.DigitButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, Global.LanguageDictionary["digit"]); };
+            this.CarriageButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, Global.LanguageDictionary["carriageReturn"]); };
+            this.VertTabButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, Global.LanguageDictionary["verticalTab"]); };
         }
 
         private void CopyTextButton_Click(object sender, EventArgs e)

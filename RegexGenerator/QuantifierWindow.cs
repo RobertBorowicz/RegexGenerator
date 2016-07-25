@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using RegexGenerator.MenuSettings;
 
 namespace RegexGenerator
 {
@@ -26,10 +27,10 @@ namespace RegexGenerator
 
             if (ZeroOneButton.Checked)
             {
-                regexAddition = _baseString + "?";
+                regexAddition = _baseString + Global.LanguageDictionary["zeroOrOne"];
             } else if (ZeroMoreButton.Checked)
             {
-                regexAddition = _baseString + "*";
+                regexAddition = _baseString + Global.LanguageDictionary["zeroOrMore"];
             } else if (ExactlyButton.Checked)
             {
                 string val = ExactlyTextBox.Text;
@@ -46,14 +47,14 @@ namespace RegexGenerator
                 }
             } else if (OneMoreButton.Checked)
             {
-                regexAddition = _baseString + "+";
+                regexAddition = _baseString + Global.LanguageDictionary["oneOrMore"];
             }
             else
             {
                 regexAddition = _baseString;
             }
 
-            if (!GreedyCheck.Checked && !ExactlyButton.Checked && !SingleRadioButton.Checked) regexAddition += "?";
+            if (!GreedyCheck.Checked && !ExactlyButton.Checked && !SingleRadioButton.Checked) regexAddition += Global.LanguageDictionary["nonGreedyQuant"];
             parent.UpdateRegexText(regexAddition);
             this.Close();
         }
