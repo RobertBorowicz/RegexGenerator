@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomRangeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomRangeWindow.Designer.cs">
+      <DependentUpon>CustomRangeWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuSettings\Global.cs" />
     <Compile Include="MenuSettings\OptionsMenu.cs">
       <SubType>Form</SubType>
@@ -53,11 +59,11 @@
     <Compile Include="MenuSettings\OptionsMenu.Designer.cs">
       <DependentUpon>OptionsMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Quantifier.cs">
+    <Compile Include="QuantifierWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Quantifier.Designer.cs">
-      <DependentUpon>Quantifier.cs</DependentUpon>
+    <Compile Include="QuantifierWindow.Designer.cs">
+      <DependentUpon>QuantifierWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="RegexGenerator.cs">
       <SubType>Form</SubType>
@@ -73,11 +79,14 @@
     <Compile Include="TestWindow.Designer.cs">
       <DependentUpon>TestWindow.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CustomRangeWindow.resx">
+      <DependentUpon>CustomRangeWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuSettings\OptionsMenu.resx">
       <DependentUpon>OptionsMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Quantifier.resx">
-      <DependentUpon>Quantifier.cs</DependentUpon>
+    <EmbeddedResource Include="QuantifierWindow.resx">
+      <DependentUpon>QuantifierWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RegexGenerator.resx">
       <DependentUpon>RegexGenerator.cs</DependentUpon>

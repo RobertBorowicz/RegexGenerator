@@ -57,9 +57,11 @@ namespace RegexGenerator
             this.GroupselectCombo = new System.Windows.Forms.ComboBox();
             this.LanguageLabel = new System.Windows.Forms.Label();
             this.SpacingBox = new System.Windows.Forms.GroupBox();
-            this.SpaceButton = new System.Windows.Forms.Button();
-            this.TabButton = new System.Windows.Forms.Button();
             this.NewlineButton = new System.Windows.Forms.Button();
+            this.TabButton = new System.Windows.Forms.Button();
+            this.SpaceButton = new System.Windows.Forms.Button();
+            this.CarriageButton = new System.Windows.Forms.Button();
+            this.VertTabButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.AlphaNumGroup.SuspendLayout();
             this.SpecialCharGroup.SuspendLayout();
@@ -91,7 +93,6 @@ namespace RegexGenerator
             this.AlphaCharButton.TabIndex = 2;
             this.AlphaCharButton.Text = "Alphabet (A-Z)";
             this.AlphaCharButton.UseVisualStyleBackColor = true;
-            this.AlphaCharButton.Click += (sender, EventArgs) => { OpenQuantifier_Click(sender, EventArgs, @"[A-Za-z]"); };
             // 
             // DigitButton
             // 
@@ -101,7 +102,6 @@ namespace RegexGenerator
             this.DigitButton.TabIndex = 3;
             this.DigitButton.Text = "Digit (0-9)";
             this.DigitButton.UseVisualStyleBackColor = true;
-            this.DigitButton.Click += (sender, EventArgs) => { OpenQuantifier_Click(sender, EventArgs, @"[0-9]"); };
             // 
             // CharRangeButton
             // 
@@ -176,7 +176,7 @@ namespace RegexGenerator
             this.editToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(350, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(730, 24);
             this.menuStrip1.TabIndex = 11;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -226,7 +226,7 @@ namespace RegexGenerator
             this.AlphaNumGroup.Controls.Add(this.DigitButton);
             this.AlphaNumGroup.Controls.Add(this.CharRangeButton);
             this.AlphaNumGroup.Controls.Add(this.CharGroupButton);
-            this.AlphaNumGroup.Location = new System.Drawing.Point(344, 173);
+            this.AlphaNumGroup.Location = new System.Drawing.Point(361, 173);
             this.AlphaNumGroup.Name = "AlphaNumGroup";
             this.AlphaNumGroup.Size = new System.Drawing.Size(326, 168);
             this.AlphaNumGroup.TabIndex = 13;
@@ -279,16 +279,16 @@ namespace RegexGenerator
             // 
             this.SpecialCharGroup.Controls.Add(this.WhiteSpaceButton);
             this.SpecialCharGroup.Controls.Add(this.AnyCharButton);
-            this.SpecialCharGroup.Location = new System.Drawing.Point(344, 67);
+            this.SpecialCharGroup.Location = new System.Drawing.Point(147, 87);
             this.SpecialCharGroup.Name = "SpecialCharGroup";
-            this.SpecialCharGroup.Size = new System.Drawing.Size(200, 100);
+            this.SpecialCharGroup.Size = new System.Drawing.Size(200, 98);
             this.SpecialCharGroup.TabIndex = 14;
             this.SpecialCharGroup.TabStop = false;
             this.SpecialCharGroup.Text = "Special Characters";
             // 
             // UnicodeGroup
             // 
-            this.UnicodeGroup.Location = new System.Drawing.Point(138, 312);
+            this.UnicodeGroup.Location = new System.Drawing.Point(361, 357);
             this.UnicodeGroup.Name = "UnicodeGroup";
             this.UnicodeGroup.Size = new System.Drawing.Size(200, 100);
             this.UnicodeGroup.TabIndex = 15;
@@ -322,35 +322,17 @@ namespace RegexGenerator
             // 
             // SpacingBox
             // 
+            this.SpacingBox.Controls.Add(this.VertTabButton);
+            this.SpacingBox.Controls.Add(this.CarriageButton);
             this.SpacingBox.Controls.Add(this.NewlineButton);
             this.SpacingBox.Controls.Add(this.TabButton);
             this.SpacingBox.Controls.Add(this.SpaceButton);
             this.SpacingBox.Location = new System.Drawing.Point(12, 96);
             this.SpacingBox.Name = "SpacingBox";
-            this.SpacingBox.Size = new System.Drawing.Size(326, 188);
+            this.SpacingBox.Size = new System.Drawing.Size(326, 186);
             this.SpacingBox.TabIndex = 18;
             this.SpacingBox.TabStop = false;
             this.SpacingBox.Text = "Spacing";
-            // 
-            // SpaceButton
-            // 
-            this.SpaceButton.Location = new System.Drawing.Point(7, 29);
-            this.SpaceButton.Name = "SpaceButton";
-            this.SpaceButton.Size = new System.Drawing.Size(75, 23);
-            this.SpaceButton.TabIndex = 0;
-            this.SpaceButton.Text = "Space";
-            this.SpaceButton.UseVisualStyleBackColor = true;
-            this.SpaceButton.Click += (sender, EventArgs) => { OpenQuantifier_Click(sender, EventArgs, @"\s"); };
-            // 
-            // TabButton
-            // 
-            this.TabButton.Location = new System.Drawing.Point(7, 77);
-            this.TabButton.Name = "TabButton";
-            this.TabButton.Size = new System.Drawing.Size(75, 23);
-            this.TabButton.TabIndex = 1;
-            this.TabButton.Text = "Tab";
-            this.TabButton.UseVisualStyleBackColor = true;
-            this.TabButton.Click += (sender, EventArgs) => { OpenQuantifier_Click(sender, EventArgs, @"\t"); };
             // 
             // NewlineButton
             // 
@@ -360,25 +342,60 @@ namespace RegexGenerator
             this.NewlineButton.TabIndex = 2;
             this.NewlineButton.Text = "New Line";
             this.NewlineButton.UseVisualStyleBackColor = true;
-            this.NewlineButton.Click += (sender, EventArgs) => { OpenQuantifier_Click(sender, EventArgs, @"\n"); };
+            // 
+            // TabButton
+            // 
+            this.TabButton.Location = new System.Drawing.Point(7, 77);
+            this.TabButton.Name = "TabButton";
+            this.TabButton.Size = new System.Drawing.Size(75, 23);
+            this.TabButton.TabIndex = 1;
+            this.TabButton.Text = "Tab";
+            this.TabButton.UseVisualStyleBackColor = true;
+            // 
+            // SpaceButton
+            // 
+            this.SpaceButton.Location = new System.Drawing.Point(7, 29);
+            this.SpaceButton.Name = "SpaceButton";
+            this.SpaceButton.Size = new System.Drawing.Size(75, 23);
+            this.SpaceButton.TabIndex = 0;
+            this.SpaceButton.Text = "Space";
+            this.SpaceButton.UseVisualStyleBackColor = true;
+            // 
+            // CarriageButton
+            // 
+            this.CarriageButton.Location = new System.Drawing.Point(135, 29);
+            this.CarriageButton.Name = "CarriageButton";
+            this.CarriageButton.Size = new System.Drawing.Size(75, 23);
+            this.CarriageButton.TabIndex = 3;
+            this.CarriageButton.Text = "Carriage Ret";
+            this.CarriageButton.UseVisualStyleBackColor = true;
+            // 
+            // VertTabButton
+            // 
+            this.VertTabButton.Location = new System.Drawing.Point(135, 77);
+            this.VertTabButton.Name = "VertTabButton";
+            this.VertTabButton.Size = new System.Drawing.Size(75, 23);
+            this.VertTabButton.TabIndex = 4;
+            this.VertTabButton.Text = "Vertical Tab";
+            this.VertTabButton.UseVisualStyleBackColor = true;
             // 
             // RegexGenerator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 325);
+            this.ClientSize = new System.Drawing.Size(730, 484);
+            this.Controls.Add(this.AlphaNumGroup);
             this.Controls.Add(this.SpacingBox);
             this.Controls.Add(this.LanguageLabel);
             this.Controls.Add(this.GroupselectCombo);
             this.Controls.Add(this.TestButton);
+            this.Controls.Add(this.SpecialCharGroup);
             this.Controls.Add(this.VerbatimCheckbox);
             this.Controls.Add(this.CopyTextButton);
             this.Controls.Add(this.RegexLabel);
             this.Controls.Add(this.RegexTextbox);
-            this.Controls.Add(this.SpecialCharGroup);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.UnicodeGroup);
-            this.Controls.Add(this.AlphaNumGroup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "RegexGenerator";
@@ -426,6 +443,8 @@ namespace RegexGenerator
         private System.Windows.Forms.Button NewlineButton;
         private System.Windows.Forms.Button TabButton;
         private System.Windows.Forms.Button SpaceButton;
+        private System.Windows.Forms.Button VertTabButton;
+        private System.Windows.Forms.Button CarriageButton;
     }
 }
 

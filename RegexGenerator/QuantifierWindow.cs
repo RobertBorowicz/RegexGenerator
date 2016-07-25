@@ -3,10 +3,10 @@ using System.Windows.Forms;
 
 namespace RegexGenerator
 {
-    public partial class Quantifier : Form
+    public partial class QuantifierWindow : Form
     {
         private readonly string _baseString;
-        public Quantifier(string baseString)
+        public QuantifierWindow(string baseString)
         {
             this._baseString = baseString;
             InitializeComponent();
@@ -53,7 +53,7 @@ namespace RegexGenerator
                 regexAddition = _baseString;
             }
 
-            if (!GreedyCheck.Checked) regexAddition += "?";
+            if (!GreedyCheck.Checked && !ExactlyButton.Checked && !SingleRadioButton.Checked) regexAddition += "?";
             parent.UpdateRegexText(regexAddition);
             this.Close();
         }
@@ -61,6 +61,7 @@ namespace RegexGenerator
         private void ExactlyButton_CheckedChanged(object sender, EventArgs e)
         {
             this.ExactlyTextBox.Enabled = !this.ExactlyTextBox.Enabled;
+            this.GreedyCheck.Enabled = !this.GreedyCheck.Enabled;
         }
 
         private void RangeButton_CheckedChanged(object sender, EventArgs e)
@@ -77,6 +78,11 @@ namespace RegexGenerator
                 return;
             }
             e.Handled = false;
+        }
+
+        private void SingleRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            this.GreedyCheck.Enabled = !this.GreedyCheck.Enabled;
         }
     }
 }

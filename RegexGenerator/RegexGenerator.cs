@@ -10,6 +10,19 @@ namespace RegexGenerator
         public RegexGenerator()
         {
             InitializeComponent();
+            InitializeClicks();
+        }
+
+        private void InitializeClicks()
+        {
+            //Add clicking functions
+            this.NewlineButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"\n"); };
+            this.SpaceButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"\s"); };
+            this.TabButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"\t"); };
+            this.AlphaCharButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"[A-Za-z]"); };
+            this.DigitButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"\d"); };
+            this.CarriageButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"\r"); };
+            this.VertTabButton.Click += (sender, eventArgs) => { OpenQuantifier_Click(sender, eventArgs, @"\v"); };
         }
 
         private void CopyTextButton_Click(object sender, EventArgs e)
@@ -30,20 +43,12 @@ namespace RegexGenerator
         {
             string currentText = RegexTextbox.Text;
 
-            if (currentText == string.Empty)
-            {
-                //Insert the preceding quote
-                return "\"";
-            } else
-            {
-                //Remove the trailing quote mark
-                return currentText.Substring(0, currentText.Length - 1);
-            }
+            return currentText == string.Empty ? "\"" : currentText.Substring(0, currentText.Length - 1);
         }
 
         private void OpenQuantifier_Click(object sender, EventArgs e, string buttonText)
         {
-            using (Quantifier popup = new Quantifier(buttonText))
+            using (QuantifierWindow popup = new QuantifierWindow(buttonText))
             {
                 popup.ShowDialog(this);
             }
@@ -70,6 +75,7 @@ namespace RegexGenerator
             this.AlphaNumGroup.Visible = false;
             this.SpecialCharGroup.Visible = false;
             this.UnicodeGroup.Visible = false;
+            this.SpacingBox.Visible = false;
 
             switch (GroupselectCombo.SelectedIndex)
             {
@@ -84,6 +90,9 @@ namespace RegexGenerator
                 case 2:
                     this.UnicodeGroup.Visible = true;
                     //this.UnicodeGroup.BringToFront();
+                    break;
+                case 3:
+                    this.SpacingBox.Visible = true;
                     break;
                 default:
                     break;

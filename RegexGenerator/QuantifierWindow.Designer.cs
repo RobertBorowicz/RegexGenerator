@@ -1,6 +1,6 @@
 ﻿namespace RegexGenerator
 {
-    partial class Quantifier
+    partial class QuantifierWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -205,17 +205,19 @@
             this.SingleRadioButton.TabStop = true;
             this.SingleRadioButton.Text = "Exactly One";
             this.SingleRadioButton.UseVisualStyleBackColor = true;
+            this.SingleRadioButton.CheckedChanged += new System.EventHandler(this.SingleRadioButton_CheckedChanged);
             // 
             // GreedyCheck
             // 
             this.GreedyCheck.AutoSize = true;
             this.GreedyCheck.Checked = true;
             this.GreedyCheck.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.GreedyCheck.Location = new System.Drawing.Point(231, 19);
+            this.GreedyCheck.Enabled = false;
+            this.GreedyCheck.Location = new System.Drawing.Point(187, 10);
             this.GreedyCheck.Name = "GreedyCheck";
-            this.GreedyCheck.Size = new System.Drawing.Size(60, 17);
+            this.GreedyCheck.Size = new System.Drawing.Size(108, 17);
             this.GreedyCheck.TabIndex = 13;
-            this.GreedyCheck.Text = "Greedy";
+            this.GreedyCheck.Text = "Greedy Quantifier";
             this.GreedyCheck.UseVisualStyleBackColor = true;
             // 
             // Quantifier
